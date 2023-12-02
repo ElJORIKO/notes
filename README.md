@@ -4,7 +4,7 @@
 2. [Unit тест приватного конструктора](#unitTestPrivateConstructor)
 3. [Создание portable версии браузера linux](#portBrowserLinux)
 4. [Получение одного файла/папки из git](#oneFileFromGit)
-5. [](#pastLineSed)
+5. [Вставить строку в файл sed](#pastLineSed)
 ---
 
 <a name="logarithm"></a>
