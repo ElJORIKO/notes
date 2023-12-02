@@ -4,6 +4,7 @@
 2. [Unit тест приватного конструктора](#unitTestPrivateConstructor)
 3. [Создание portable версии браузера linux](#portBrowserLinux)
 4. [Получение одного файла/папки из git](#oneFileFromGit)
+5. [](#pastLineSed)
 ---
 
 <a name="logarithm"></a>
@@ -112,3 +113,21 @@ $ ./browser/browser
 
 ### получить папку
 `git archive --remote=ssh://git@repo.ru/repo.git HEAD path/to/holder | tar xO >> holder && tar xf holder`
+
+---
+<a name="pastLineSed"></a>
+# *Вставить строку в файл sed *
+
+Вставить строку в файл с помощью утилиты sed можно двумя способами:
+###Вставка после определенной строки
+Вставится на 5 строку (т.е. после 4-й)
+```
+sed '4a\
+Some message ' file.txt > result.txt
+```
+###Вставка перед определенной строкой
+Вставится на 3 строку (т.е. перед 4-й)
+```
+sed '4b\
+Some message ' file.txt > result.txt
+```
