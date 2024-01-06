@@ -7,6 +7,7 @@
 5. [Вставить строку в файл sed](#pastLineSed)
 6. [Рекурсивно выкачать сайт](#downloadSiteReqursive)
 7. [Java получить имя метода, вызвавшего метод](#getMethodWhoCall)
+8. [Справка по scp](#scpInfo)
 ---
 
 <a name="logarithm"></a>
@@ -169,3 +170,17 @@ public class Test {
     );
    }
 ```
+
+---
+<a name="scpInfo" ></a>
+# *Scp справка*
+
+Использование: 
+`scp [from] server@name:[to]` - отправить из папки from на сервер server под именем name в папку to
+`scp server@name:[from] [to]` - получить с удлённой машины на локальную
+Например:
+`scp ~/my/path 192.168.0.1@user:/full/path/to/target`
+`scp 192.168.0.1@user:/path/to/file ~/target`
+
+Рекурсивное кописрование (вложенные папки и файлы):
+`scp -rp [from] server@name:[to]`
