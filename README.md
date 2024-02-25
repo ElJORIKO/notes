@@ -1,13 +1,15 @@
 # Notes
 
-1. [Логарифмы java](#logarithm)
-2. [Unit тест приватного конструктора](#unitTestPrivateConstructor)
-3. [Создание portable версии браузера linux](#portBrowserLinux)
-4. [Получение одного файла/папки из git](#oneFileFromGit)
-5. [Вставить строку в файл sed](#pastLineSed)
-6. [Рекурсивно выкачать сайт](#downloadSiteReqursive)
-7. [Java получить имя метода, вызвавшего метод](#getMethodWhoCall)
-8. [Справка по scp](#scpInfo)
+1.  [Логарифмы java](#logarithm)
+2.  [Unit тест приватного конструктора](#unitTestPrivateConstructor)
+3.  [Создание portable версии браузера linux](#portBrowserLinux)
+4.  [Получение одного файла/папки из git](#oneFileFromGit)
+5.  [Вставить строку в файл sed](#pastLineSed)
+6.  [Рекурсивно выкачать сайт](#downloadSiteReqursive)
+7.  [Java получить имя метода, вызвавшего метод](#getMethodWhoCall)
+8.  [Справка по scp](#scpInfo)
+9.  [Vim удалить строки, не содеражащие regex](#vimDeleteLinesNotContains)
+10. [Openssl der в p12](№derToP12)
 ---
 
 <a name="logarithm"></a>
@@ -184,3 +186,23 @@ public class Test {
 
 Рекурсивное кописрование (вложенные папки и файлы):
 `scp -rp [from] server@name:[to]`
+
+---
+<a name="vimDeleteLinesNotContains"></a>
+# *Vim удалить строки, не содеражащие regex*
+
+Использование:
+Команда `:g!/text/d` удаляет все строки НЕ содержащие text
+
+---
+<a name="derToP12"></a>
+# *Openssl der в p12*
+
+Для перевода сертификата pem и key в p12 нужно выполнить следующие команды:
+
+`openssl x509 -in app.cer -inform DER -out app.pem -outform PEM`
+Эта команда преобразует Der сертификат в pem формат
+
+`openssl pkcs12 -export -out app.p12 -inkey app.key -in app.pem` 
+Далее нужно два раза ввести пароль для p12 сертификата
+И на выходе будет сертификат p12
